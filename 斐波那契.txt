@@ -1,4 +1,4 @@
-#定义斐波那契函数
+#瀹氫箟鏂愭尝閭ｅ鍑芥暟
 def fibonqList(num):
     fibonqList = []
     for i in range(0, num):
