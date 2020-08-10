@@ -1,0 +1,11 @@
+#定义斐波那契函数
+def fibonqList(num):
+    fibonqList = []
+    for i in range(0, num):
+        if len(fibonqList) < 2:
+            fibonqList.append(1)
+            continue
+        fibonqList.append(fibonqList[-1]+fibonqList[-2])
+    return fibonqList
+
+print(fibonqList(10))
