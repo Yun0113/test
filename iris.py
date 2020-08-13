@@ -6,9 +6,7 @@ df_Iris.head()
 #后5行
 df_Iris.tail()
 df_Iris.describe()
-#第一种方法: 替换
-# df_Iris['Name']= df_Iris.Name.str.replace('Iris-','')
-#第二种方法: 分割
+#分割
 df_Iris['Name']= df_Iris.Name.apply(lambda x: x.split('-')[1])
 df_Iris.Name.unique()
 import seaborn as sns
