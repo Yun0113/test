@@ -33,6 +33,25 @@ print("电影类别数量:%s"%(len(set(genres1))))#电影类别数量
 
 
 
+
+#5.2018年一共有多少人进行过电影评分
+import time 
+time1 = "2018-1-1 00:00:00"
+time2 = "2019-1-1 00:00:00"
+# 先转换为时间数组
+timeArray1 = time.strptime(time1, "%Y-%m-%d %H:%M:%S")
+timeArray2 = time.strptime(time2, "%Y-%m-%d %H:%M:%S")
+# 转换为时间戳
+timeStamp1 = int(time.mktime(timeArray1))
+timeStamp2 = int(time.mktime(timeArray2))
+# print(timeStamp1)
+# print(timeStamp2)
+rating = ratings[(ratings.timestamp >= timeStamp1)&(ratings.timestamp <= timeStamp2)]
+userid = rating.drop_duplicates(subset='userId',keep='first',inplace=False)#去除重复的用户名
+userid_count = userid.shape[0] #2018年进行过电影评分用户数量
+print("2018年进行过电影评分用户数量:%s"%(userid_count))
+
+
     
     
     
